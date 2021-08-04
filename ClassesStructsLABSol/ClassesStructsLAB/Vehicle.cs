@@ -12,23 +12,80 @@ namespace ClassesStructsLAB
         private int _capacity;
         private int _numPassengers;
 
-
-
-        public int Position { get; private set; }
+        public int Position { get; private set; } = 0;
         public int Speed { get; init; }        
-        public int NumPassengers { get; set; }
 
+        public int numPassengers
+        {
+            get { return _numPassengers; } 
+            set
+            {
+                if (-numPassengers > _capacity)
+                {
+                    throw new ArgumentOutOfRangeException("Too many on board!");
+                }
+                else if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Only positive int allowed");
+                }
+
+                _numPassengers = value;
+            }
+        }
 
         public Vehicle()
         {
-            throw new System.NotImplementedException();
+            Speed = 10;
         }
 
+        public Vehicle(int capacity, int speed = 10)
+        {
+            _capacity = capacity;
+            Speed = speed;
+            if (capacity < 0)
+            {
+                throw new ArgumentException();
+            }
+        }
+
+        public virtual string Move(int times)
+        {
+            Position = Speed * times;
+            return $"Moving along {times} times";
+        }
 
         public string Move()
         {
-            throw new System.NotImplementedException();
+            Position = Speed;
+            return "Moving along";
         }
+
+
+
+
+
+        //public Vehicle(int capacity, int speed)
+        //{
+
+
+        //}
+
+        //public Vehicle() {
+
+        //}
+
+
+        //public string Move()
+        //{
+        //    // takes the speed and adds it to the position
+        //    throw new System.NotImplementedException();
+        //}
+
+
+        //public string Move(int times)
+        //{
+        //    return $"Moving along {times} times";
+        //}
 
     }
 }
