@@ -4,7 +4,7 @@ namespace ClassesStructsLAB
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Vehicle car = new Vehicle(5, 40);
 
@@ -13,10 +13,9 @@ namespace ClassesStructsLAB
             //Console.WriteLine(car.Position);
 
 
-
             Aeroplane a = new Aeroplane(200, 100, "JetsRUS") { numPassengers = 150 };
 
-            a.Ascend(150);
+            a.Ascend(500);
             Console.WriteLine(a.Move(3));
             Console.WriteLine(a);
             a.Descend(200);

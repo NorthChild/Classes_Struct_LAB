@@ -9,7 +9,7 @@ namespace ClassesStructsLAB
 {
     public class Vehicle
     {
-        private int _capacity;
+        protected int _capacity;
         private int _numPassengers;
 
         public int Position { get; private set; } = 0;
@@ -54,38 +54,12 @@ namespace ClassesStructsLAB
             return $"Moving along {times} times";
         }
 
-        public string Move()
+        public virtual string Move()
         {
-            Position = Speed;
+            Position += Speed;
             return "Moving along";
         }
 
-
-
-
-
-        //public Vehicle(int capacity, int speed)
-        //{
-
-
-        //}
-
-        //public Vehicle() {
-
-        //}
-
-
-        //public string Move()
-        //{
-        //    // takes the speed and adds it to the position
-        //    throw new System.NotImplementedException();
-        //}
-
-
-        //public string Move(int times)
-        //{
-        //    return $"Moving along {times} times";
-        //}
 
     }
 }
